@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.img-container{
+    display: flex;
+    gap: 1%;
+    height: 90%;
+    width: 90%;
+}
+
+.card{
+    height: 100%;
+    flex: 1;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.7s;
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card p{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+.card.active{
+    flex: 10;
+}
+.card.active p{
+    opacity: 1;
+}
+
+
+
+@media(max-width: 480px){
+    .card:nth-of-type(4), .card:nth-of-type(5){
+        display: none;
+    }
+}

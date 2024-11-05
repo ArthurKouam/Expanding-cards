@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <div class="img-container">
+            <div class="card active" style="background-image: url('assets/01.jpg')">
+                <p>La montagne du sud</p>
+            </div>
+            <div class="card" style="background-image: url('assets/02.jpg')">
+                <p>La montagne du sud</p>
+            </div>
+            <div class="card" style="background-image: url('assets/03.jpg')">
+                <p>La montagne du sud</p>
+            </div>
+            <div class="card" style="background-image: url('assets/04.jpg')">
+                <p>La montagne du sud</p>
+            </div>
+            <div class="card" style="background-image: url('assets/05.jpg')">
+                <p>La montagne du sud</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cards = Array.from(document.getElementsByClassName('card'));
+        let isActive = 0;
+
+        cards.forEach((card, index) => {
+            card.addEventListener('click', ()=>{
+                cards[isActive].classList.remove("active");
+                card.classList.add("active");
+                isActive = index;
+            })
+        })
+        
+    </script>
+</body>
+</html>
